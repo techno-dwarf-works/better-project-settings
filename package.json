@@ -1,0 +1,31 @@
+{
+  "name": "com.tdw.better.projectsettings",
+  "displayName": "Better Project Settings",
+  "version": "0.0.1",
+  "unity": "2021.3",
+  "description": " ",
+  "dependencies": {
+    "com.tdw.better.singletons": "0.0.7",
+    "com.uurha.betterextensions": "1.5.3",
+    "com.tdw.better.internal.core": "0.0.2"
+  },
+  "author": {
+    "name": "Better Plugins",
+    "url": "https://github.com/techno-dwarf-works"
+  },
+  "changelogUrl": "https://github.com/techno-dwarf-works/better-project-settings",
+  "documentationUrl": "https://github.com/techno-dwarf-works/better-project-settings/tree/main#readme",
+  "license": "MIT",
+  "licensesUrl":"https://github.com/techno-dwarf-works/better-project-settings/blob/main/LICENSE",
+  "keywords": [
+    "settings",
+    "project settings"
+  ],
+  "samples": [
+    {
+      "displayName": "Default samples",
+      "description": "Contains test samples",
+      "path": "Samples~/TestSamples"
+    }
+  ]
+}
