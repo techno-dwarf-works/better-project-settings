@@ -1,0 +1,16 @@
+{
+    "name": "BetterProjectSettings.Runtime",
+    "rootNamespace": "Better.ProjectSettings.Runtime",
+    "references": [
+        "GUID:af7fffdf1d83bc842b0f6e3a01efda16"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

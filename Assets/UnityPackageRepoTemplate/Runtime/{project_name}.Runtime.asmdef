@@ -1,4 +1,0 @@
-{
-	"name": "{project_name}.Runtime",
-	"rootNamespace": "Better.{short_project_name}.Runtime"
-}
