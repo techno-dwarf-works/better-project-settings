@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Reflection;
-using Better.Extensions.Runtime;
+using Better.Commons.Runtime.Extensions;
 using UnityEditor;
 
 namespace Better.ProjectSettings.EditorAddons

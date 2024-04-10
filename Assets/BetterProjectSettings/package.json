@@ -1,12 +1,11 @@
 {
   "name": "com.tdw.better.projectsettings",
   "displayName": "Better Project Settings",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "unity": "2021.3",
   "description": "Easy way to manage persistent settings for both Editor and Runtime",
   "dependencies": {
-    "com.tdw.better.singletons": "0.0.7",
-    "com.uurha.betterextensions": "1.5.95",
+    "com.tdw.better.singletons": "0.1.0",
     "com.tdw.better.internal.core": "0.0.2"
   },
   "author": {
