@@ -1,5 +1,7 @@
 ﻿using Better.ProjectSettings.Runtime;
 using UnityEditor;
+using UnityEditor.UIElements;
+using UnityEngine.UIElements;
 
 namespace Better.ProjectSettings.EditorAddons
 {
@@ -12,9 +14,9 @@ namespace Better.ProjectSettings.EditorAddons
             _editor = Editor.CreateEditor(_settings);
         }
 
-        protected override void DrawGUI()
+        protected override void CreateVisualElements(VisualElement rootElement)
         {
-            _editor.OnInspectorGUI();
+            InspectorElement.FillDefaultInspector(rootElement, _settingsObject, _editor);
         }
     }
 }
