@@ -1,9 +1,12 @@
 ﻿using System.IO;
+using Better.Commons.Runtime.Extensions;
 using Better.Internal.Core.Runtime;
 using Better.ProjectSettings.Runtime;
 using Better.Singletons.Runtime;
 using UnityEditor;
+using UnityEditor.UIElements;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 namespace Better.ProjectSettings.EditorAddons
 {
@@ -11,8 +14,6 @@ namespace Better.ProjectSettings.EditorAddons
     {
         protected readonly T _settings;
         protected readonly SerializedObject _settingsObject;
-        private GUIStyle _style;
-        private const int Space = 8;
         public const string ProjectPath = PrefixConstants.ProjectPrefix + "/";
 
         protected ProjectSettingsProvider(string path, SettingsScope scope = SettingsScope.Project)
@@ -23,29 +24,22 @@ namespace Better.ProjectSettings.EditorAddons
             label = Path.GetFileName(path);
         }
 
-        public override void OnGUI(string searchContext)
+        public override void OnActivate(string searchContext, VisualElement rootElement)
         {
-            var style = CreateOrGetStyle();
-            using (new EditorGUILayout.VerticalScope(style))
-            {
-                DrawGUI();
-            }
-
-            _settingsObject.ApplyModifiedPropertiesWithoutUndo();
+            CreateVisualElements(rootElement);
+            rootElement.Bind(_settingsObject);
+            rootElement.RegisterCallback<SerializedObjectChangeEvent>(OnObjectChanged);
         }
 
-        private GUIStyle CreateOrGetStyle()
+        protected virtual void OnObjectChanged(SerializedObjectChangeEvent changeEvent)
         {
-            if (_style != null)
-            {
-                return _style;
-            }
-
-            _style = new GUIStyle();
-            _style.margin = new RectOffset(Space, Space, Space, Space);
-            return _style;
+            changeEvent.changedObject.ApplyModifiedPropertiesWithoutUndo();
         }
 
-        protected abstract void DrawGUI();
+        public override void OnDeactivate()
+        {
+        }
+
+        protected abstract void CreateVisualElements(VisualElement rootElement);
     }
 }
